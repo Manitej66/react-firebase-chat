@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import Chat from "./components/Chat";
+import Navbar from "./components/Navbar";
+import "./App.css";
+import Send from "./components/Send";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [name, setName] = useState(localStorage.getItem("name"));
+  const [temp, setTemp] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <div className="container">
+        {name === null ? (
+          <>
+            <input
+              className="name"
+              onChange={(e) => setTemp(e.target.value)}
+              value={name}
+              placeholder="enter name"
+            />
+            <br />
+            <button
+              onClick={() => {
+                setName(temp);
+                localStorage.setItem("name", temp);
+              }}
+              className="send-btn"
+            >
+              start
+            </button>
+          </>
+        ) : (
+          <>
+            <Chat name={name} />
+            <Send name={name} />
+          </>
+        )}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

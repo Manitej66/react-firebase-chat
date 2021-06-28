@@ -1,38 +1,88 @@
-.App {
+body {
+  box-sizing: border-box;
+  touch-action: manipulation;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #4c4c6d;
+  padding: 1px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  width: 60%;
+  margin: 10px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.send {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.send-area {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 80%;
+}
+
+.send-area:focus {
+  outline: none;
+}
+
+.send-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #52006a;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.name {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.name:focus {
+  outline: none;
+}
+
+.chats {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-box {
+  max-width: 60%;
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.chat-author {
+  margin: 0;
+  font-weight: bold;
+  padding: 4px;
+}
+
+.chat-msg {
+  margin: 0;
+  padding: 4px;
 }
